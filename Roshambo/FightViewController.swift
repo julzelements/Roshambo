@@ -9,27 +9,30 @@
 import UIKit
 
 class FightViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  
+  var brain: RoshshamboBrain!
+  
+  override func viewDidLoad() {
+    brain = RoshshamboBrain()
+  }
+  
+  @IBAction func userPickedRock(sender: UIButton) {
+    if let brain = brain {
+      let outcome = brain.duel(RoshshamboBrain.gameThrow.rock)
+      var controller: ResultViewController
+      controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
+      controller.gameOutcome = outcome.userOutcome
+      
+      
+      self.presentViewController(controller, animated: true, completion: nil)
     }
+  }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  @IBAction func userThrewPaper(sender: UIButton) {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
+  
+  @IBAction func userThrewScissors(sender: UIButton) {
+    
+  }
 }

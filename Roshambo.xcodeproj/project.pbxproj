@@ -26,6 +26,7 @@
 		2B5385EF1C88267500E759D1 /* FightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
 		2B5385F11C88269400E759D1 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2B5385F31C88359800E759D1 /* RoshamboBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoshamboBrain.swift; sourceTree = "<group>"; };
+		2BE5685B1C88441F00DFEF50 /* numberGenerator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = numberGenerator.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 				2B5385EF1C88267500E759D1 /* FightViewController.swift */,
 				2B5385F11C88269400E759D1 /* ResultViewController.swift */,
 				2B5385F31C88359800E759D1 /* RoshamboBrain.swift */,
+				2BE5685B1C88441F00DFEF50 /* numberGenerator.playground */,
 			);
 			path = Roshambo;
 			sourceTree = "<group>";
@@ -302,6 +304,7 @@
 				2B5385ED1C8825CA00E759D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
