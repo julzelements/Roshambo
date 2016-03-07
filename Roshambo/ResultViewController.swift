@@ -14,17 +14,24 @@ class ResultViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     if let gameOutcome = self.gameOutcome {
-      switch gameOutcome {
-      case RoshshamboBrain.gameOutcome.win: result.text = "win"
-      case RoshshamboBrain.gameOutcome.lose: result.text = "lose"
-      case RoshshamboBrain.gameOutcome.tie: result.text = "tie"
-        
+        result.text = getGameOutcome(gameOutcome)
       }
+
     }
+  
+
+  @IBAction func playAgain(sender: AnyObject) {
   }
   
   @IBOutlet weak var result: UILabel!
   @IBOutlet weak var opponentThrow: UILabel!
   
   
+  func getGameOutcome(gameOutcome: RoshshamboBrain.gameOutcome) -> String {
+    switch gameOutcome {
+    case RoshshamboBrain.gameOutcome.win: return "win"
+    case RoshshamboBrain.gameOutcome.lose: return "lose"
+    case RoshshamboBrain.gameOutcome.tie: return "tie"
+    }
+  }
 }

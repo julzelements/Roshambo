@@ -118,36 +118,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-j7-lpm">
-                                <rect key="frame" x="152" y="159" width="296" height="281"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-j7-lpm">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="296" id="VuM-33-IRI"/>
+                                    <constraint firstAttribute="height" constant="300" id="Qsf-w4-lpc"/>
+                                    <constraint firstAttribute="width" constant="300" id="aMz-7I-fDR"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-uA-mIE">
-                                <rect key="frame" x="273" y="448" width="48" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-uA-mIE">
+                                <rect key="frame" x="276" y="458" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkf-ak-KHE">
-                                <rect key="frame" x="261" y="562" width="79" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent Throw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-tT-6O4">
+                                <rect key="frame" x="236" y="487" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkf-ak-KHE">
+                                <rect key="frame" x="261" y="550" width="79" height="30"/>
                                 <state key="normal" title="Play Again?"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="hnS-oZ-Ozy" eventType="touchUpInside" id="FtK-Uz-8E7"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opponent Throw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-tT-6O4">
-                                <rect key="frame" x="236" y="477" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uwB-uA-mIE" firstAttribute="top" secondItem="cC2-j7-lpm" secondAttribute="bottom" constant="8" symbolic="YES" id="5k6-z2-5JK"/>
-                            <constraint firstItem="uwB-uA-mIE" firstAttribute="centerX" secondItem="cC2-j7-lpm" secondAttribute="centerX" id="9SP-VA-yuM"/>
-                            <constraint firstItem="lGy-al-90N" firstAttribute="top" secondItem="Gkf-ak-KHE" secondAttribute="bottom" constant="8" symbolic="YES" id="9zU-3D-doy"/>
-                            <constraint firstItem="cC2-j7-lpm" firstAttribute="top" secondItem="dbM-ED-pZA" secondAttribute="bottom" constant="139" id="FEq-eA-pEf"/>
-                            <constraint firstItem="Gkf-ak-KHE" firstAttribute="centerX" secondItem="uwB-uA-mIE" secondAttribute="centerX" id="klL-jY-HXn"/>
+                            <constraint firstItem="Gkf-ak-KHE" firstAttribute="centerX" secondItem="Jao-tT-6O4" secondAttribute="centerX" id="G8I-78-hM7"/>
+                            <constraint firstItem="uwB-uA-mIE" firstAttribute="top" secondItem="cC2-j7-lpm" secondAttribute="bottom" constant="8" id="Zz6-eE-nQP"/>
+                            <constraint firstAttribute="bottom" secondItem="Gkf-ak-KHE" secondAttribute="bottom" constant="20" symbolic="YES" id="aad-8y-YBw"/>
+                            <constraint firstItem="Gkf-ak-KHE" firstAttribute="centerX" secondItem="Hhk-mS-UbY" secondAttribute="centerX" id="lwn-bO-S3s"/>
+                            <constraint firstItem="Gkf-ak-KHE" firstAttribute="top" secondItem="Jao-tT-6O4" secondAttribute="bottom" constant="42" id="mb1-bc-ROB"/>
+                            <constraint firstItem="cC2-j7-lpm" firstAttribute="centerY" secondItem="Hhk-mS-UbY" secondAttribute="centerY" id="uu9-ue-LxJ"/>
+                            <constraint firstItem="Gkf-ak-KHE" firstAttribute="centerX" secondItem="uwB-uA-mIE" secondAttribute="centerX" id="wSj-KG-DZy"/>
+                            <constraint firstItem="Gkf-ak-KHE" firstAttribute="centerX" secondItem="cC2-j7-lpm" secondAttribute="centerX" id="xUH-kH-LZ6"/>
                         </constraints>
                     </view>
                     <connections>
