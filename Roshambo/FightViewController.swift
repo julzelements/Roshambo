@@ -17,22 +17,26 @@ class FightViewController: UIViewController {
   }
   
   @IBAction func userPickedRock(sender: UIButton) {
-    if let brain = brain {
-      let outcome = brain.duel(RoshshamboBrain.gameThrow.rock)
-      var controller: ResultViewController
-      controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
-      controller.gameOutcome = outcome.userOutcome
-      
-      
-      self.presentViewController(controller, animated: true, completion: nil)
-    }
+ userThrowsHand(RoshshamboBrain.gameThrow.rock)
   }
 
   @IBAction func userThrewPaper(sender: UIButton) {
-    
+     userThrowsHand(RoshshamboBrain.gameThrow.paper)
   }
   
   @IBAction func userThrewScissors(sender: UIButton) {
-    
+     userThrowsHand(RoshshamboBrain.gameThrow.scissors)
+  }
+  
+  func userThrowsHand(hand: RoshshamboBrain.gameThrow) {
+       if let brain = brain {
+      let outcome = brain.duel(hand)
+      var controller: ResultViewController
+      controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
+      controller.gameOutcome = outcome.userOutcome
+      controller.userThrow = hand
+      
+      self.presentViewController(controller, animated: true, completion: nil)
+    }
   }
 }

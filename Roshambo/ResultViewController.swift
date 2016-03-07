@@ -11,6 +11,7 @@ import UIKit
 class ResultViewController: UIViewController {
   
   var gameOutcome: RoshshamboBrain.gameOutcome?
+  var userThrow: RoshshamboBrain.gameThrow?
   
   override func viewWillAppear(animated: Bool) {
     if let gameOutcome = self.gameOutcome {
@@ -28,10 +29,12 @@ class ResultViewController: UIViewController {
   
   
   func getGameOutcome(gameOutcome: RoshshamboBrain.gameOutcome) -> String {
+    print (userThrow)
     switch gameOutcome {
     case RoshshamboBrain.gameOutcome.win: return "win"
     case RoshshamboBrain.gameOutcome.lose: return "lose"
     case RoshshamboBrain.gameOutcome.tie: return "tie"
+      
     }
   }
 }
