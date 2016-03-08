@@ -35,6 +35,7 @@ class FightViewController: UIViewController {
       controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
       controller.gameOutcome = outcome.userOutcome
       controller.userThrow = hand
+      controller.opponentThrow = outcome.opponentThrow
       
       self.presentViewController(controller, animated: true, completion: nil)
     }
