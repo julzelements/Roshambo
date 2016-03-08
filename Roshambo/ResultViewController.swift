@@ -12,10 +12,11 @@ class ResultViewController: UIViewController {
   
   var gameOutcome: RoshshamboBrain.gameOutcome?
   var userThrow: RoshshamboBrain.gameThrow?
+  var opponentThrow: RoshshamboBrain.gameThrow?
   
   override func viewWillAppear(animated: Bool) {
     if let gameOutcome = self.gameOutcome {
-        result.text = getGameOutcome(gameOutcome)
+        winLoseLabel.text = "you \(getGameOutcome(gameOutcome))"
       }
 
     }
@@ -24,8 +25,10 @@ class ResultViewController: UIViewController {
   @IBAction func playAgain(sender: AnyObject) {
   }
   
-  @IBOutlet weak var result: UILabel!
-  @IBOutlet weak var opponentThrow: UILabel!
+  @IBOutlet weak var youPlayedLabel: UILabel!
+  @IBOutlet weak var computerPlayedLabel: UILabel!
+  @IBOutlet weak var winLoseLabel: UILabel!
+
   
   
   func getGameOutcome(gameOutcome: RoshshamboBrain.gameOutcome) -> String {

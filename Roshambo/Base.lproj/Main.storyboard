@@ -125,14 +125,14 @@
                                     <constraint firstAttribute="width" constant="300" id="aMz-7I-fDR"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-uA-mIE">
-                                <rect key="frame" x="276" y="458" width="48" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Played: ____" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-uA-mIE">
+                                <rect key="frame" x="240" y="458" width="122" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opponent Throw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-tT-6O4">
-                                <rect key="frame" x="236" y="487" width="129" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You win/lose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PX9-0x-ejF">
+                                <rect key="frame" x="253" y="516" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -142,11 +142,20 @@
                                 <state key="normal" title="Play Again?"/>
                                 <connections>
                                     <action selector="playAgain:" destination="hnS-oZ-Ozy" eventType="touchUpInside" id="FtK-Uz-8E7"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="yXT-v8-3ZD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Played: ____" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-tT-6O4">
+                                <rect key="frame" x="216" y="487" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PX9-0x-ejF" firstAttribute="top" secondItem="Jao-tT-6O4" secondAttribute="bottom" constant="8" symbolic="YES" id="087-0S-GXS"/>
+                            <constraint firstItem="PX9-0x-ejF" firstAttribute="centerX" secondItem="Gkf-ak-KHE" secondAttribute="centerX" id="7JL-nq-uno"/>
                             <constraint firstItem="Gkf-ak-KHE" firstAttribute="centerX" secondItem="Jao-tT-6O4" secondAttribute="centerX" id="G8I-78-hM7"/>
                             <constraint firstItem="uwB-uA-mIE" firstAttribute="top" secondItem="cC2-j7-lpm" secondAttribute="bottom" constant="8" id="Zz6-eE-nQP"/>
                             <constraint firstAttribute="bottom" secondItem="Gkf-ak-KHE" secondAttribute="bottom" constant="20" symbolic="YES" id="aad-8y-YBw"/>
@@ -158,8 +167,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="opponentThrow" destination="Jao-tT-6O4" id="nFd-cX-kzy"/>
-                        <outlet property="result" destination="uwB-uA-mIE" id="23Q-bG-M1a"/>
+                        <outlet property="computerPlayedLabel" destination="Jao-tT-6O4" id="DsB-22-Ovs"/>
+                        <outlet property="winLoseLabel" destination="PX9-0x-ejF" id="JX3-lV-bxA"/>
+                        <outlet property="youPlayedLabel" destination="uwB-uA-mIE" id="BZn-qB-Jb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2A-TC-h5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
