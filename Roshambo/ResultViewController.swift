@@ -18,13 +18,13 @@ class ResultViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     newBrain = RoshshamboBrain()
     if let gameOutcome = self.gameOutcome {
-      winLoseLabel.text = "you \(newBrain!.getGameOutcomeToString(gameOutcome))"
+      winLoseLabel.text = "you \(newBrain!.getGameOutcomeToString(gameOutcome))!"
     }
     if let yourHand = self.userThrow {
-      youPlayedLabel.text = "You played \(newBrain!.getUserThrowToString(yourHand))"
+      youPlayedLabel.text = "You: \(newBrain!.getUserThrowToString(yourHand))"
     }
     if let computerHand = self.opponentThrow {
-      computerPlayedLabel.text = "Computer played \(newBrain!.getUserThrowToString(computerHand))"
+      computerPlayedLabel.text = "Computer: \(newBrain!.getUserThrowToString(computerHand))"
     }
     let battleOutcomeString = determineBattleOutcomeImage(userThrow!, p2: opponentThrow!, gameOutcome: gameOutcome!)
     battleOutcomeImage.image = UIImage(named: battleOutcomeString)
