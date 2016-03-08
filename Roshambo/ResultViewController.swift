@@ -13,31 +13,25 @@ class ResultViewController: UIViewController {
   var gameOutcome: RoshshamboBrain.gameOutcome?
   var userThrow: RoshshamboBrain.gameThrow?
   var opponentThrow: RoshshamboBrain.gameThrow?
+  var newBrain: RoshshamboBrain?
   
   override func viewWillAppear(animated: Bool) {
+    newBrain = RoshshamboBrain()
     if let gameOutcome = self.gameOutcome {
-        winLoseLabel.text = "you \(getGameOutcome(gameOutcome))"
-      }
-
+      winLoseLabel.text = "you \(newBrain!.getGameOutcomeToString(gameOutcome))"
     }
+    
+  }
   
-
+  
   @IBAction func playAgain(sender: AnyObject) {
   }
   
   @IBOutlet weak var youPlayedLabel: UILabel!
   @IBOutlet weak var computerPlayedLabel: UILabel!
   @IBOutlet weak var winLoseLabel: UILabel!
+  
+  
+  
 
-  
-  
-  func getGameOutcome(gameOutcome: RoshshamboBrain.gameOutcome) -> String {
-    print (userThrow)
-    switch gameOutcome {
-    case RoshshamboBrain.gameOutcome.win: return "win"
-    case RoshshamboBrain.gameOutcome.lose: return "lose"
-    case RoshshamboBrain.gameOutcome.tie: return "tie"
-      
-    }
-  }
 }

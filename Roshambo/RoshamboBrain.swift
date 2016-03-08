@@ -32,10 +32,10 @@ class RoshshamboBrain {
     }
   }
   
-  func duel(userThrow: gameThrow) -> (userOutcome: gameOutcome, opponentThrow: gameThrow) {
+  func duel(myThrow: gameThrow) -> (userOutcome: gameOutcome, opponentThrow: gameThrow) {
     let opponentThrow = getRandomOpponentHand()
-    let userOutcome = determineMyGameOutcome(userThrow, opponentHand: opponentThrow)
-    return (userOutcome, opponentThrow)
+    let myOutcome = determineMyGameOutcome(myThrow, opponentHand: opponentThrow)
+    return (myOutcome, opponentThrow)
   }
   
   func determineMyGameOutcome(myHand: gameThrow, opponentHand: gameThrow) -> gameOutcome {
@@ -60,5 +60,22 @@ class RoshshamboBrain {
       }
     }
   }
- 
+  
+  func getGameOutcomeToString(outcome: gameOutcome) -> String {
+    switch outcome {
+    case RoshshamboBrain.gameOutcome.win: return "win"
+    case RoshshamboBrain.gameOutcome.lose: return "lose"
+    case RoshshamboBrain.gameOutcome.tie: return "tie"
+    }
+  }
+  
+  func getUserThrowToString(userThrow: gameThrow) -> String {
+    switch userThrow {
+    case RoshshamboBrain.gameThrow.rock: return "rock"
+    case RoshshamboBrain.gameThrow.paper: return "paper"
+    case RoshshamboBrain.gameThrow.scissors: return "scissors"
+      
+    }
+  }
+
 }
