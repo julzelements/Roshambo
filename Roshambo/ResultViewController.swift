@@ -33,8 +33,7 @@ class ResultViewController: UIViewController {
   
   
   @IBAction func playAgain(sender: AnyObject) {
-    //Nothing in here
-    //This is just for the storyboard segue (Do not delete)
+    self.dismissViewControllerAnimated(true, completion: nil)
   }
   
   @IBOutlet weak var youPlayedLabel: UILabel!

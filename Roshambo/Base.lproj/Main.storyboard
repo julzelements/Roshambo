@@ -45,7 +45,7 @@
                                 <rect key="frame" x="468" y="381" width="58" height="30"/>
                                 <state key="normal" title="Scissors"/>
                                 <connections>
-                                    <action selector="userThrewScissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vyn-Qv-pHF"/>
+                                    <segue destination="hnS-oZ-Ozy" kind="presentation" identifier="scissorsSegue" id="MF1-Hn-3it"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfg-TP-hwH">
@@ -151,7 +151,6 @@
                                 <state key="normal" title="Play Again?"/>
                                 <connections>
                                     <action selector="playAgain:" destination="hnS-oZ-Ozy" eventType="touchUpInside" id="FtK-Uz-8E7"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="yXT-v8-3ZD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,4 +185,7 @@
         <image name="Rock" width="258" height="350"/>
         <image name="Scissors" width="350" height="350"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MF1-Hn-3it"/>
+    </inferredMetricsTieBreakers>
 </document>

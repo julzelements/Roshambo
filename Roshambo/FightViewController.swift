@@ -15,12 +15,20 @@ class FightViewController: UIViewController {
   override func viewDidLoad() {
     brain = RoshshamboBrain()
   }
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "paperSegue" {
       let outcome = brain.duel(.paper)
       let controller = segue.destinationViewController as! ResultViewController
       controller.gameOutcome = outcome.userOutcome
       controller.userThrow = .paper
+      controller.opponentThrow = outcome.opponentThrow
+      
+    } else if segue.identifier == "scissorsSegue" {
+      let outcome = brain.duel(.scissors)
+      let controller = segue.destinationViewController as! ResultViewController
+      controller.gameOutcome = outcome.userOutcome
+      controller.userThrow = .scissors
       controller.opponentThrow = outcome.opponentThrow
     }
   }
@@ -33,10 +41,6 @@ class FightViewController: UIViewController {
   @IBAction func userThrewPaper(sender: UIButton) {
     performSegueWithIdentifier("paperSegue", sender: self)
 //     userThrowsHand(RoshshamboBrain.gameThrow.paper)
-  }
-  
-  @IBAction func userThrewScissors(sender: UIButton) {
-     userThrowsHand(RoshshamboBrain.gameThrow.scissors)
   }
   
   func userThrowsHand(hand: RoshshamboBrain.gameThrow) {
