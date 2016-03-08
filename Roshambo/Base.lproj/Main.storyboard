@@ -101,6 +101,9 @@
                             <constraint firstItem="bem-fr-Am7" firstAttribute="width" secondItem="bem-fr-Am7" secondAttribute="height" multiplier="110:97" id="vvj-8s-XJB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="hnS-oZ-Ozy" kind="presentation" identifier="paperSegue" id="eGw-Y5-ZuL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
